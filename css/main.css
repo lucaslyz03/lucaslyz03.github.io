@@ -2856,7 +2856,7 @@ ul.breadcrumb li:last-child {
   }
 }
 body {
-  background: url("/images/bg.jpg");
+  background: url("https://github.com/lucaslyz03/pictures/blob/master/background.jpg?raw=true");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -2868,8 +2868,12 @@ body {
 .sidebar {
   opacity: 0.9;
 }
+.main-inner {
+  background: #fff;
+  opacity: 0.8;
+}
 .header-inner {
-  background: rgba(255,255,255,0.9);
+  opacity: 0.8;
 }
 .popup {
   opacity: 0.9;
