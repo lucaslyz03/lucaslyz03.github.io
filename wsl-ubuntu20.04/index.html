@@ -22,29 +22,36 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="wsl2优化自从wsl2更新以来，wsl的功能也日趋强大，随后我抱着尝试的心态使用了ubnutu wsl，发现十分好用，随即弃用虚拟机。下面记录对wsl优化过程： &lt;! more —&gt; 初始配置安装wsl ubuntu20.04修改源备份sudo cp -v &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.backup 修改文件权限sudo ch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wsl-ubuntu20.04 配置">
+<meta property="og:url" content="http://example.com/wsl-ubuntu20.04/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="wsl2优化自从wsl2更新以来，wsl的功能也日趋强大，随后我抱着尝试的心态使用了ubnutu wsl，发现十分好用，随即弃用虚拟机。下面记录对wsl优化过程： &lt;! more —&gt; 初始配置安装wsl ubuntu20.04修改源备份sudo cp -v &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.backup 修改文件权限sudo ch">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/zshscf.png">
+<meta property="og:image" content="d:/zshtmn.png">
+<meta property="article:published_time" content="2020-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-01T14:34:24.890Z">
 <meta property="article:author" content="Lucas Lu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/zshscf.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/wsl-ubuntu20.04/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>wsl-ubuntu20.04 配置 | Hexo</title>
   
 
 
@@ -164,7 +171,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -176,6 +183,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#wsl2%E4%BC%98%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">wsl2优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">初始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85wsl-ubuntu20-04"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装wsl ubuntu20.04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%BA%90"><span class="nav-number">1.1.2.</span> <span class="nav-text">修改源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">修改文件权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">开始修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-LinuxWSL-Ubuntu-18-04-%E6%98%AF%E9%A2%84%E5%85%88%E5%88%9B%E5%BB%BA%E5%A5%BD%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">E:\LinuxWSL\Ubuntu-18.04 是预先创建好的目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%B5%E5%BE%AA%E4%BB%A5%E4%B8%8B%E7%9A%84%E6%A0%BC%E5%BC%8F-lt-%E5%8F%91%E8%A1%8C%E7%89%88-gt-%E4%BB%A5-wsl-exe-l-v-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%AD-NAME-%E5%AD%97%E6%AE%B5%E7%9A%84%E5%90%8D%E7%A7%B0%E4%B8%BA%E5%87%86"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">遵循以下的格式 &lt;发行版&gt; 以 wsl.exe -l -v 命令执行结果中 NAME 字段的名称为准</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh%E7%BE%8E%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">zsh美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oh-my-zsh"><span class="nav-number">1.2.2.</span> <span class="nav-text">oh-my-zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%A0%81%E4%BA%91%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">下载码云安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91install-sh"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">编辑install.sh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E8%AE%BE%E4%B8%BAys"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">主题设为ys</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -236,212 +244,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021-1-21wsl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lucas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
 
     
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021-1-21wsl/" class="post-title-link" itemprop="url">使用hexo+github pages搭建个人博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-02-01 15:06:20 / 修改时间：15:07:54" itemprop="dateCreated datePublished" datetime="2021-02-01T15:06:20+08:00">2021-02-01</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="使用hexo-github-pages搭建个人博客-ubuntu20-04LTS版"><a href="#使用hexo-github-pages搭建个人博客-ubuntu20-04LTS版" class="headerlink" title="使用hexo+github pages搭建个人博客(ubuntu20.04LTS版)"></a>使用hexo+github pages搭建个人博客(ubuntu20.04LTS版)</h1><ol>
-<li>前期准备<br>下载git</li>
-</ol>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">sudo apt-get install git-core <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>下载node.js（国内镜像）</p>
-<p><a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/node">https://npm.taobao.org/mirrors/node</a></p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;v14.15.4&#x2F;node-v14.15.4.tar.gz
-tar zxvf node-v14.15.4.tar.gz
-cd node-v14.15.4&#x2F;
-.&#x2F;configure 
- make
- sudo make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># Using Ubuntu
-curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">sudo apt install nodejs npm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 如果在尝试安装 Hexo 的过程中出现 <code>EACCES</code> 权限错误，请遵循 <a target="_blank" rel="noopener" href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">由 npmjs 发布的指导</a> 修复该问题。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org
-
-cnpm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ cnpm install -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">$ hexo init &lt;folder&gt;
-$ cd &lt;folder&gt;
-$ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/MFP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lucas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/MFP/" class="post-title-link" itemprop="url">MFP</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-11-16 22:57:12" itemprop="dateCreated datePublished" datetime="2020-11-16T22:57:12+08:00">2020-11-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-01 13:44:38" itemprop="dateModified" datetime="2021-02-01T13:44:38+08:00">2021-02-01</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="积分系统"><a href="#积分系统" class="headerlink" title="积分系统"></a>积分系统</h1><h2 id="1-人名导入，每个人为一个数组，用二维数组表示"><a href="#1-人名导入，每个人为一个数组，用二维数组表示" class="headerlink" title="1.人名导入，每个人为一个数组，用二维数组表示"></a>1.人名导入，每个人为一个数组，用二维数组表示</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">stu<span class="token punctuation">&#123;</span><span class="token builtin">id</span><span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"学生姓名"</span><span class="token punctuation">,</span>score<span class="token punctuation">]</span>
-
-
-
-<span class="token builtin">list</span><span class="token operator">=</span><span class="token punctuation">[</span>stu1<span class="token punctuation">,</span>stu2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-主菜单"><a href="#2-主菜单" class="headerlink" title="2.主菜单"></a>2.主菜单</h2><p>​    </p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">MainMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">'''
-    1....
-    2...
-    3..
-    ...
-    .
-    .
-    .
-    '''</span><span class="token punctuation">)</span>
-    <span class="token comment">#输入数字，对应功能</span>
-    menuN<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> menuN<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
-        add<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> menuN<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
-        delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token comment">#if.....</span>
-
-    
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-	MainMenu<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">addscore<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">,</span><span class="token builtin">int</span> scorePlus<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    convertNameToId<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
- 	<span class="token builtin">list</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> scorePlus
-    <span class="token comment">#给某人加分或减分</span>
-delete<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    convertNameToId<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token builtin">list</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"NULL"</span>
-    <span class="token comment">#删除某人</span>
-add<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span>
-	<span class="token comment">#和上面类似</span>
-convertNameToId<span class="token punctuation">(</span><span class="token builtin">str</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token builtin">int</span> p<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>p<span class="token operator">&lt;=</span><span class="token builtin">list</span><span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>p<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token builtin">list</span><span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>a
-        <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token comment">#输入人名，输出内部id</span>
- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -460,10 +268,9 @@ convertNameToId<span class="token punctuation">(</span><span class="token builti
     
     
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/wsl-ubuntu20.04/" class="post-title-link" itemprop="url">wsl-ubuntu20.04 配置</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          wsl-ubuntu20.04 配置
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -493,7 +300,7 @@ convertNameToId<span class="token punctuation">(</span><span class="token builti
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="wsl2优化"><a href="#wsl2优化" class="headerlink" title="wsl2优化"></a>wsl2优化</h1><p><em>自从wsl2更新以来，wsl的功能也日趋强大，随后我抱着尝试的心态使用了ubnutu wsl，发现十分好用，随即弃用虚拟机。下面记录对wsl优化过程：</em></p>
+        <h1 id="wsl2优化"><a href="#wsl2优化" class="headerlink" title="wsl2优化"></a>wsl2优化</h1><p><em>自从wsl2更新以来，wsl的功能也日趋强大，随后我抱着尝试的心态使用了ubnutu wsl，发现十分好用，随即弃用虚拟机。下面记录对wsl优化过程：</em></p>
 <p>&lt;! more —&gt;</p>
 <h2 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h2><h3 id="安装wsl-ubuntu20-04"><a href="#安装wsl-ubuntu20-04" class="headerlink" title="安装wsl ubuntu20.04"></a>安装wsl ubuntu20.04</h3><h3 id="修改源"><a href="#修改源" class="headerlink" title="修改源"></a>修改源</h3><h4 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> -v /etc/apt/sources.list /etc/apt/sources.list.backup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">777</span> /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -560,7 +367,6 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
 <img src="D:\zshtmn.png" style="zoom:80%;" />
 
 
-      
     </div>
 
     
@@ -568,15 +374,22 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/MFP/" rel="next" title="MFP">
+                  MFP <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
   
   
-  
-
-
   
 
 

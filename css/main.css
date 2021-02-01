@@ -2856,7 +2856,7 @@ ul.breadcrumb li:last-child {
   }
 }
 body {
-  background: url("https://github.com/lucaslyz03/pictures/blob/master/background.jpg?raw=true");
+  background: url("/images/dogbg1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -2870,11 +2870,8 @@ body {
 }
 .main-inner {
   background: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header-inner {
-  opacity: 0.8;
-}
-.popup {
   opacity: 0.9;
 }
