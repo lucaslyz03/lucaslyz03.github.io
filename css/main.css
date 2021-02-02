@@ -2856,22 +2856,25 @@ ul.breadcrumb li:last-child {
   }
 }
 body {
-  background: url("/images/dogbg1.png");
+  background: url("https://img.imgdb.cn/item/6018cd053ffa7d37b346c5e0.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
 }
 .content-wrap {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 .sidebar {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .main-inner {
   background: #fff;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 .header-inner {
-  opacity: 0.9;
+  opacity: 0.8;
+}
+.footer {
+  color: #ebeb4f;
 }
