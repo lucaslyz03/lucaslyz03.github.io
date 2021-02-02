@@ -2945,6 +2945,6 @@ body {
 .footer {
   color: #eee;
 }
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-thumb {
   background-color: #e97d0e;
 }
