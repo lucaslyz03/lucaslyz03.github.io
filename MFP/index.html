@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="积分系统1.人名导入，每个人为一个数组，用二维数组表示&lt;! –more–&gt; stu&amp;#123;id&amp;#125;&#x3D;[&quot;学生姓名&quot;,score]    list&#x3D;[stu1,stu2,...] 2.主菜单​     def MainMenu():     print(&#39;&#39;&#39;     1....     2...     3..     ...     .     .     .     &#39;">
+  <meta name="description" content="社团积分系统 具体代码请见https:&#x2F;&#x2F;github.com&#x2F;lucaslyz03&#x2F;stuManagementSystem  此处分享思路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MFP">
 <meta property="og:url" content="http://example.com/MFP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="积分系统1.人名导入，每个人为一个数组，用二维数组表示&lt;! –more–&gt; stu&amp;#123;id&amp;#125;&#x3D;[&quot;学生姓名&quot;,score]    list&#x3D;[stu1,stu2,...] 2.主菜单​     def MainMenu():     print(&#39;&#39;&#39;     1....     2...     3..     ...     .     .     .     &#39;">
+<meta property="og:description" content="社团积分系统 具体代码请见https:&#x2F;&#x2F;github.com&#x2F;lucaslyz03&#x2F;stuManagementSystem  此处分享思路">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-16T14:57:12.000Z">
-<meta property="article:modified_time" content="2021-02-02T06:40:21.177Z">
+<meta property="article:modified_time" content="2021-03-06T11:48:16.242Z">
 <meta property="article:author" content="Lucas Lu">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">积分系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%BA%E5%90%8D%E5%AF%BC%E5%85%A5%EF%BC%8C%E6%AF%8F%E4%B8%AA%E4%BA%BA%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%EF%BC%8C%E7%94%A8%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.1.</span> <span class="nav-text">1.人名导入，每个人为一个数组，用二维数组表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%BB%E8%8F%9C%E5%8D%95"><span class="nav-number">1.2.</span> <span class="nav-text">2.主菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">3.功能</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E5%9B%A2%E7%A7%AF%E5%88%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">社团积分系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.数据的导入导出</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -287,7 +287,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-02 14:40:21" itemprop="dateModified" datetime="2021-02-02T14:40:21+08:00">2021-02-02</time>
+        <time title="修改时间：2021-03-06 19:48:16" itemprop="dateModified" datetime="2021-03-06T19:48:16+08:00">2021-03-06</time>
       </span>
 
   
@@ -300,51 +300,97 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="积分系统"><a href="#积分系统" class="headerlink" title="积分系统"></a>积分系统</h1><h2 id="1-人名导入，每个人为一个数组，用二维数组表示"><a href="#1-人名导入，每个人为一个数组，用二维数组表示" class="headerlink" title="1.人名导入，每个人为一个数组，用二维数组表示"></a>1.人名导入，每个人为一个数组，用二维数组表示</h2><p>&lt;! –more–&gt;</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">stu<span class="token punctuation">&#123;</span><span class="token builtin">id</span><span class="token punctuation">&#125;</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"学生姓名"</span><span class="token punctuation">,</span>score<span class="token punctuation">]</span>
+        <h1 id="社团积分系统"><a href="#社团积分系统" class="headerlink" title="社团积分系统"></a>社团积分系统</h1><p> 具体代码请见<a target="_blank" rel="noopener" href="https://github.com/lucaslyz03/stuManagementSystem">https://github.com/lucaslyz03/stuManagementSystem</a></p>
+<blockquote>
+<p>此处分享思路</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="1-数据的导入导出"><a href="#1-数据的导入导出" class="headerlink" title="1.数据的导入导出"></a>1.数据的导入导出</h3><ul>
+<li>使用csv文件格式</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入</span>
+<span class="token keyword">def</span> <span class="token function">inputdata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'datacenter.csv'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> csvfile<span class="token punctuation">:</span>
+        reader<span class="token operator">=</span> csv<span class="token punctuation">.</span>DictReader<span class="token punctuation">(</span>csvfile<span class="token punctuation">)</span>
+        dataList<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> reader<span class="token punctuation">:</span>
+            dataList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>row<span class="token punctuation">)</span>  <span class="token comment">#将每一个人的信息存为一个字典</span>
+    <span class="token keyword">return</span> dataList   <span class="token comment">#再将每一个字典存入列表</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>可以看到，整个数据库为一个列表，表格中的每行对应列表的一个元素，每个人的信息存为一个键-值对，用字典存储</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导出</span>
+<span class="token keyword">def</span> <span class="token function">outputdata</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'datacenter.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> FF<span class="token punctuation">:</span>
+        fieldnames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'\ufeffid'</span><span class="token punctuation">,</span><span class="token string">'classNum'</span><span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token string">'score'</span><span class="token punctuation">,</span><span class="token string">'div'</span><span class="token punctuation">]</span>
+        writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>DictWriter<span class="token punctuation">(</span>FF<span class="token punctuation">,</span> fieldnames<span class="token operator">=</span>fieldnames<span class="token punctuation">)</span>
+        <span class="token comment">#write changes to the file</span>
+        writer<span class="token punctuation">.</span>writeheader<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+            writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>row<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<ol start="2">
+<li><p>数据的处理</p>
+<p>接下来就是数据的增删改查了，较为简单</p>
+</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">consult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dataList<span class="token operator">=</span>inputdata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    findNameVal<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入姓名： "</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> dataList<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token operator">==</span>findNameVal<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"个人信息:\n姓名："</span><span class="token operator">+</span>x<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\n班级："</span><span class="token operator">+</span>x<span class="token punctuation">[</span><span class="token string">'classNum'</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\n部门："</span><span class="token operator">+</span>x<span class="token punctuation">[</span><span class="token string">'div'</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\n当前积分："</span><span class="token operator">+</span>x<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token comment">#output</span>
+            <span class="token keyword">break</span>
+
+
+<span class="token keyword">def</span> <span class="token function">adminAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res<span class="token operator">=</span>adminTest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> res<span class="token punctuation">:</span>
+        dataList<span class="token operator">=</span>inputdata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        inname<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'name:'</span><span class="token punctuation">)</span>
+        inclass<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"class:"</span><span class="token punctuation">)</span>
+        inscore<span class="token operator">=</span><span class="token number">0</span>
+        indiv<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'division:'</span><span class="token punctuation">)</span>
+        newrow<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'\ufeffid'</span><span class="token punctuation">:</span><span class="token string">'00NAN'</span><span class="token punctuation">,</span><span class="token string">'classNum'</span><span class="token punctuation">:</span>inclass<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">:</span>inname<span class="token punctuation">,</span><span class="token string">'score'</span><span class="token punctuation">:</span>inscore<span class="token punctuation">,</span><span class="token string">'div'</span><span class="token punctuation">:</span>indiv<span class="token punctuation">&#125;</span>
+        <span class="token comment">#start to loadin the data@!#</span>
+        <span class="token comment"># dataList=inputdata()</span>
+        dataList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newrow<span class="token punctuation">)</span>
+        outputdata<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"login error"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">adminAlterif</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res<span class="token operator">=</span>adminTest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> res<span class="token punctuation">:</span>
+        dataList<span class="token operator">=</span>inputdata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        inname<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'name:'</span><span class="token punctuation">)</span>
+        altscore<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"加分/减分分数（减分直接用负数表示）："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> dataList<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token operator">==</span>inname<span class="token punctuation">:</span>
+                x<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span>altscore<span class="token punctuation">)</span>
+                <span class="token keyword">break</span>
+        outputdata<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"login error"</span><span class="token punctuation">)</span>
 
 
 
-<span class="token builtin">list</span><span class="token operator">=</span><span class="token punctuation">[</span>stu1<span class="token punctuation">,</span>stu2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-主菜单"><a href="#2-主菜单" class="headerlink" title="2.主菜单"></a>2.主菜单</h2><p>​    </p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">MainMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">'''
-    1....
-    2...
-    3..
-    ...
-    .
-    .
-    .
-    '''</span><span class="token punctuation">)</span>
-    <span class="token comment">#输入数字，对应功能</span>
-    menuN<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> menuN<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
-        add<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> menuN<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
-        delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token comment">#if.....</span>
+<span class="token keyword">def</span> <span class="token function">adminKillStalin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res<span class="token operator">=</span>adminTest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> res<span class="token punctuation">:</span>
+        dataList<span class="token operator">=</span>inputdata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        inname<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'name:'</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> dataList<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token operator">==</span>inname<span class="token punctuation">:</span>         dataList<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'\ufeffid'</span><span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token string">'\ufeffid'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'classNum'</span><span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token string">'classNum'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'score'</span><span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'div'</span><span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token string">'div'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span>
+        outputdata<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"login error"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-	MainMenu<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">addscore<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">,</span><span class="token builtin">int</span> scorePlus<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    convertNameToId<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
- 	<span class="token builtin">list</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> scorePlus
-    <span class="token comment">#给某人加分或减分</span>
-delete<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    convertNameToId<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-    <span class="token builtin">list</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"NULL"</span>
-    <span class="token comment">#删除某人</span>
-add<span class="token punctuation">(</span><span class="token builtin">str</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span>
-	<span class="token comment">#和上面类似</span>
-convertNameToId<span class="token punctuation">(</span><span class="token builtin">str</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token builtin">int</span> p<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>p<span class="token operator">&lt;=</span><span class="token builtin">list</span><span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>p<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token builtin">list</span><span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>a
-        <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token comment">#输入人名，输出内部id</span>
- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     </div>
 
     
